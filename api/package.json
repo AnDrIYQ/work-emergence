@@ -1,0 +1,23 @@
+{
+  "name": "work-emergence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnDrIYQ/work-emergence.git"
+  },
+  "keywords": [
+    "Work",
+    "Emergence"
+  ],
+  "author": "andrexonerhg@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnDrIYQ/work-emergence/issues"
+  },
+  "homepage": "https://github.com/AnDrIYQ/work-emergence#readme"
+}
