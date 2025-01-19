@@ -6,10 +6,16 @@ import pluginVue from "eslint-plugin-vue";
 export default [
     {files: ["**/*.{js,mjs,cjs,vue}"]},
     {
-        languageOptions: { globals: globals.browser },
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                config: true,
+            },
+        },
         rules: {
             semi: ["error", "always"],
             indent: ["error", 4],
+            'vue/valid-template-root': 'off',
         },
     },
     pluginJs.configs.recommended,

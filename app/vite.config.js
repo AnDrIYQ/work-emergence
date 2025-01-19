@@ -20,21 +20,30 @@ export default defineConfig({
             exclude: /node_modules/,
         }),
     ],
+    css: {
+        modules: {
+            localsConvention: 'camelCaseOnly',
+        },
+    },
     resolve: {
         alias: {
-            '@root': path.resolve(__dirname, './src')
+            '@root': path.resolve(__dirname, './src'),
+            '@assets': path.resolve(__dirname, './src/assets'),
+            '@styles': path.resolve(__dirname, './src/styles'),
         },
         extensions: ['.vue', '.js', '.css', '.scss'],
     },
     test: {
         alias: {
             '@root': path.resolve(__dirname, './src'),
+            '@assets': path.resolve(__dirname, './src/assets'),
+            '@styles': path.resolve(__dirname, './src/styles'),
         },
         reporters: [],
         coverage: {
             reporter: [],
         },
-        environment: 'node',
+        environment: 'jsdom',
         globals: true,
     },
 });

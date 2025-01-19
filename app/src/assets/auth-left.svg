@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+    <!-- Темний фон -->
+    <rect x="0" y="0" width="300" height="300" fill="#3B4A59" />
+
+    <!-- Темний фон -->
+    <rect x="0" y="0" width="300" height="300" fill="#3B4A59" />
+
+    <!-- Темний фон -->
+    <rect x="0" y="0" width="300" height="300" fill="#3B4A59" />
+
+    <!-- Верхня дуга замка -->
+    <path d="M110 120 C110 60, 190 60, 190 120" fill="none" stroke="#BCC1C7" stroke-width="15" />
+    <circle cx="110" cy="120" r="7.5" fill="#BCC1C7" />
+    <circle cx="190" cy="120" r="7.5" fill="#BCC1C7" />
+
+    <!-- Основний корпус замка -->
+    <rect x="90" y="120" width="120" height="120" fill="#D9B574" rx="15" />
+    <rect x="100" y="130" width="100" height="100" fill="#C2A96F" rx="10" />
+
+    <!-- Отвір для ключа -->
+    <circle cx="150" cy="190" r="20" fill="#3B4A59" />
+    <circle cx="150" cy="190" r="10" fill="#FFD700" />
+
+    <!-- Хвилі для динамічного ефекту -->
+    <path d="M0 240 Q75 270, 150 240 T300 240 L300 300 L0 300 Z" fill="#6BA583" opacity="0.8" />
+    <path d="M0 270 Q100 300, 200 270 T300 270 L300 300 L0 300 Z" fill="#D9B574" opacity="0.6" />
+
+    <!-- Геометричні акценти -->
+    <circle cx="60" cy="50" r="15" fill="#D9B574" />
+    <circle cx="230" cy="80" r="15" fill="#6BA583" />
+</svg>

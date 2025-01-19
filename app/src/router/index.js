@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { defineAsyncComponent } from "vue";
+import ViewPage from '@root/views/ViewPage';
 
 const routes = [
     {
-        path: '/',
-        name: 'View',
-        component: defineAsyncComponent(() => import('@root/views/ViewPage')),
+        path: '/login',
+        name: 'login',
+        component: ViewPage,
+        meta: {
+            keepAlive: true,
+        },
     },
 ];
 

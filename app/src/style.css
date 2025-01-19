@@ -1,11 +1,17 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     font-synthesis: none;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --dark: #393434;
+}
+
+#app {
+    min-height: 100vh;
 }
 
 a {
@@ -19,4 +25,5 @@ body {
 h1 {
     margin-bottom: 0;
     margin-top: 0;
+    color: var(--dark);
 }
