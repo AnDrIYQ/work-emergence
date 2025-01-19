@@ -1,40 +1,37 @@
-/** @import { ServiceActionResponse, User, UserInputData } from "@root/types.js" */
-
-import UserModel from '@root/models/user.js';
+/** @import { ServiceActionResponse, RegisterUserInputData } from "@root/types.js" */
+import AccountModel from '@root/models/account.js';
+import Exception from "@root/exceptions.js";
 
 export default class AuthService {
     /**
-     * Register user
-     * @returns {Promise<ServiceActionResponse<User>>}
+     * @param {RegisterUserInputData} data
+     * @returns {Promise<ServiceActionResponse<any>>}
      */
-    static async registerUser() {
-        /** @type UserInputData */
-        const user = {
-            name: 'Some user',
-        };
-        const instance = await UserModel.create({ name: user.name });
+    static async registerUser({ email, password, confirmPassword }) {
+        if (password !== confirmPassword) {
+            return {
+                success: false,
+                errors: [
+                    Exception.getError('Passwords do not match')
+                ],
+            };
+        }
 
-        return {
-            success: !!instance._id,
-            data: {
-                name: instance.toObject().name || '',
-                _id: instance.id,
-            },
-        };
-    }
+        try {
+            const accountInstance = await AccountModel.create({
+                email,
+                password,
+            });
 
-    /**
-     * Fetch all users
-     * @returns {Promise<Array<User>>} - Масив користувачів
-     */
-    static async fetchUsers() {
-        return UserModel.aggregate([
-            {
-                $project: {
-                    _id: {$toString: '$_id'},
-                    name: 1,
-                },
-            },
-        ]);
+            return {
+                success: true,
+                data: accountInstance.toObject(),
+            };
+        } catch (/** @type {any} */ data) {
+            return {
+                success: false,
+                errors: Exception.get(data.errors),
+            };
+        }
     }
 }

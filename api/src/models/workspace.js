@@ -1,21 +1,19 @@
 // @ts-ignore
 import mongoose from 'mongoose';
-import Exception from '@root/exceptions.js';
 
-const UserSchema = new mongoose.Schema(
+const WorkspaceSchema = new mongoose.Schema(
     {
         account_id: {
             type: mongoose.Schema.Types.ObjectId,
-            unique: [true, Exception.getError('Account is already exists')],
             ref: 'Account',
-            required: [true, Exception.getError('Account is required')],
+            required: true,
         },
         name: {
             type: String,
             required: true,
             trim: true,
         },
-        avatar: {
+        description: {
             type: String,
             default: null,
         },
@@ -33,6 +31,6 @@ const UserSchema = new mongoose.Schema(
     }
 );
 
-const User = mongoose.model('User', UserSchema);
+const Workspace = mongoose.model('Workspace', WorkspaceSchema);
 
-export default User;
+export default Workspace;

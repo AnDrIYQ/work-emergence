@@ -1,23 +1,26 @@
 // @ts-ignore
 import mongoose from 'mongoose';
-import Exception from '@root/exceptions.js';
 
-const UserSchema = new mongoose.Schema(
+const CommentSchema = new mongoose.Schema(
     {
-        account_id: {
+        instance_id: {
             type: mongoose.Schema.Types.ObjectId,
-            unique: [true, Exception.getError('Account is already exists')],
-            ref: 'Account',
-            required: [true, Exception.getError('Account is required')],
+            required: true,
         },
-        name: {
+        instance_type: {
+            type: String,
+            enum: ['Record', 'Singleton', 'Report'],
+            required: true,
+        },
+        member_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Participation',
+            required: true,
+        },
+        content: {
             type: String,
             required: true,
             trim: true,
-        },
-        avatar: {
-            type: String,
-            default: null,
         },
         createdAt: {
             type: Date,
@@ -33,6 +36,6 @@ const UserSchema = new mongoose.Schema(
     }
 );
 
-const User = mongoose.model('User', UserSchema);
+const Comment = mongoose.model('Comment', CommentSchema);
 
-export default User;
+export default Comment;
