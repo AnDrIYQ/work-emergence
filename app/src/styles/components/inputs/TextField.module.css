@@ -1,0 +1,24 @@
+.input {
+    height: 32px;
+    padding: 8px;
+    border-radius: 4px;
+    color: var(--dark);
+
+    border: 1px solid var(--gray);
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.input::placeholder {
+    color: gray;
+}
+
+.input:hover {
+    border-color: var(--secondary);
+}
+
+.input:focus, .input:active {
+    box-shadow: 0 0 1px 2px var(--secondary);
+    border-color: var(--main);
+}

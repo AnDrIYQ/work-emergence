@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+}
+.form > div {
+    margin-top: 16px;
+    display: flex;
+    &:first-child {
+        margin-top: 0;
+    }
+    & > * {
+        flex-grow: 1;
+        & > input {
+            width: 100%;
+        }
+    }
+}

@@ -8,7 +8,10 @@
             <img :class="style.authImage" src="@assets/auth-left.svg" alt="auth-left">
         </div>
         <div :class="[style.contentPart]">
-            <slot></slot>
+            <div :class="[style.contentArea]">
+                <img :class="style.authImage" src="@assets/we.svg" alt="auth-left">
+                <slot></slot>
+            </div>
         </div>
     </div>
 </template>

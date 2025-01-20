@@ -24,15 +24,24 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
     (response) => {
+        if (response.status === 205) {
+            if (!response.headers.get('Authorization')) {
+                window.localStorage.removeItem('authToken');
+                window.location.href = '/login';
+            } else {
+                window.localStorage.setItem('authToken', response.headers.get('Authorization'));
+                window.location.href = '/';
+            }
+        }
         return response.data;
     },
     (error) => {
         if (error.response) {
             console.error(`Помилка: ${error.response.status}`, error.response.data);
         } else if (error.request) {
-            console.error('Відсутня відповідь від сервера');
+            console.error('Server response is missing');
         } else {
-            console.error('Помилка налаштування запиту', error.message);
+            console.error('Request setting error', error.message);
         }
         return Promise.reject(error);
     }

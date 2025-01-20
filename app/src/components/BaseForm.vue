@@ -1,6 +1,7 @@
 <template>
     <form
         ref="form"
+        :class="[style.form]"
         :method="method"
     >
         <slot />
@@ -8,6 +9,9 @@
 </template>
 
 <script>
+import style from '@styles/components/BaseForm.module.css';
+import api from "@root/api";
+
 export default {
     name: "BaseForm",
     emits: ['success', 'error', 'sending-start'],
@@ -25,9 +29,23 @@ export default {
             default: () => ({}),
         },
     },
+    data() {
+        return { style };
+    },
     methods: {
         submit() {
-            // Needs axios
+            this.$emit('sending-start');
+            const inputs = document.querySelectorAll('input, select');
+            const results = Array.from(inputs).map((input) => {
+                return input.reportValidity();
+            });
+            if (!results.some((result) => !result)) {
+                api.post(this.url).then((response) => {
+                    if (!response) {
+                        return false;
+                    }
+                });
+            }
         },
     },
 };
