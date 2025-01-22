@@ -1,9 +1,11 @@
 <template>
     <auth-layout>
         <base-form
+            v-model:isFormDirty="isFormDirty"
             ref="form"
             url="/login"
             :data="model"
+            @success="onFormSuccess"
         >
             <h2>{{ $t('Вхід') }}</h2>
             <span>{{ $t('Авторизуйтеся, щоб продовжити.') }}</span>
@@ -33,9 +35,14 @@ import BaseForm from "@root/components/BaseForm.vue";
 import EmailField from "@root/components/inputs/EmailField.vue";
 import PasswordField from "@root/components/inputs/PasswordField.vue";
 import UIButton from "@root/components/ui/UIButton.vue";
+import BeforeLeaveForm from "@root/mixins/before-leave-form.js";
 
 export default {
     name: 'LoginPage',
+    mixins: [BeforeLeaveForm],
+    beforeRouteLeave(to, from, next) {
+        this.beforeLeaveCheck(to, from, next);
+    },
     data() {
         return {
             model: {
@@ -45,6 +52,12 @@ export default {
         };
     },
     methods: {
+        onFormSuccess(response) {
+            if (response.user) {
+                this.$router.push('/');
+                this.$notify.success(this.$t('Вітання'), this.$t('Авторизовано!'));
+            }
+        },
         submit() {
             this.$refs.form.submit();
         },

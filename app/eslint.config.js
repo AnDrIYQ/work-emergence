@@ -10,6 +10,7 @@ export default [
             globals: {
                 ...globals.browser,
                 config: true,
+                toastr: true,
             },
         },
         rules: {

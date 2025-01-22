@@ -12,6 +12,9 @@
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.3.1",
     "axios": "^1.7.9",
+    "object-to-formdata": "^4.5.1",
+    "passfather": "^3.0.6",
+    "toastr": "^2.1.4",
     "vue": "^3.5.13",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2"

@@ -1,27 +1,39 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ViewPage from '@root/views/Login.vue';
+import Login from '@root/views/Login.vue';
+import Register from '@root/views/Register.vue';
+import NotFound from '@root/views/NotFound.vue';
 
 const routes = [
     {
         path: '/login',
         name: 'login',
-        component: ViewPage,
+        component: Login,
         meta: {
-            title: 'Login',
+            title: 'Вхід',
             keepAlive: true,
-            publicOnly: true,
-            authRequired: false,
+        },
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register,
+        meta: {
+            title: 'Реєстрація',
+            keepAlive: true,
         },
     },
     {
         path: '/',
         name: 'home',
-        component: ViewPage,
+        component: Login,
         meta: {
             title: 'Work Emergence',
             keepAlive: true,
-            authRequired: true,
         },
+    },
+    {
+        path: "/:pathMatch(.*)",
+        component: NotFound
     },
 ];
 
