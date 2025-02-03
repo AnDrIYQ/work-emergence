@@ -1,8 +1,26 @@
+@import "tailwindcss";
+@import "../node_modules/@flaticon/flaticon-uicons/css/all/all.css";
+
+@import "./styles/login-layout.css";
+@import "./styles/main-layout.css";
+
+/* Variables */
+@import "./styles/vars.css";
+
+/* Common */
+@import "./styles/common.css";
+@import "./styles/card.css";
+@import "./styles/selects.css";
+@import "./styles/form.css";
+@import "./styles/inputs.css";
+
 * {
     box-sizing: border-box;
 }
 
 :root {
+    --easy-table-border: none;
+
     font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -11,6 +29,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    --main-bg: #f0f2f8;
     --dark: #393434;
     --secondary: #62937b;
     --main: #3b4a59;
@@ -20,48 +39,17 @@
     --box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
-#app {
-    min-height: 100vh;
-}
-
-.has-error {
-    box-shadow: 0 0 1px 2px var(--danger) !important;
-    border: none !important;
+body {
+    margin: 0;
+    background-color: var(--main-bg);
+    @apply text-sm;
 }
 
 a {
     color: var(--secondary);
 }
 
-button {
+#app {
     display: flex;
-    align-items: center;
-    cursor: pointer;
-    justify-content: center;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    background-color: #62937b;
-    color: white;
-}
-button:hover {
-    box-shadow: var(--box-shadow);
-}
-button i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-}
-
-body {
-    margin: 0;
-}
-
-h1 {
-    margin-bottom: 0;
-    margin-top: 0;
-    color: var(--dark);
+    min-height: 100vh;
 }

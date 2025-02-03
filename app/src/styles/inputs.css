@@ -1,0 +1,94 @@
+@layer components {
+    .file-input {
+        @apply relative w-full h-10 cursor-pointer rounded-lg border border-gray-300 bg-white text-[var(--dark)] shadow-sm focus:border-green-500 focus:ring focus:ring-green-300;
+    }
+    .file-input-hidden {
+        @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
+    }
+    .file-label {
+        @apply flex items-center justify-center w-full h-full px-4 py-2 text-white bg-[var(--secondary)] border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-200;
+    }
+    .has-error {
+        @apply !shadow-[0_0_1px_2px_var(--danger)] !border-none;
+    }
+    button {
+        @apply flex items-center justify-center cursor-pointer rounded-md outline-none border-none bg-[#62937b] text-white;
+    }
+    .button {
+        @apply py-3 h-8 text-sm;
+    }
+    button:hover {
+        @apply shadow-[var(--box-shadow)];
+    }
+    button i {
+        @apply flex items-center justify-center w-full h-full text-base;
+    }
+    textarea {
+        resize: none;
+        @apply h-16 p-2 rounded-md text-[var(--dark)] border border-[var(--gray)] outline-none transition-shadow duration-300 ease-in-out text-xs;
+    }
+    .input {
+        @apply h-8 p-2 rounded-md text-[var(--dark)] border border-[var(--gray)] outline-none transition-shadow duration-300 ease-in-out text-xs;
+    }
+    textarea::placeholder,
+    .dp__input::placeholder,
+    .input::placeholder {
+        @apply text-gray-500;
+    }
+    textarea:hover,
+    .input:hover,
+    .multiselect__tags:hover
+    {
+        @apply !border-[var(--secondary)];
+    }
+    textarea:focus,
+    .multiselect__tags:focus,
+    .dp__input:focus,
+    textarea:active,
+    .input:focus,
+    .input:active {
+        @apply input-outline;
+    }
+
+    .toggle-password-visibility {
+        @apply w-8 h-8 rounded-r-none flex items-center justify-center text-white;
+    }
+
+    .generate-new-password {
+        @apply w-8 h-8 rounded-l-none flex items-center justify-center text-white;
+    }
+
+    .input, textarea {
+        @apply flex-grow border border-gray-300 outline-none text-gray-800 px-2 bg-white;
+    }
+
+    .no-radius-right {
+        @apply !rounded-r-none;
+    }
+
+    .no-radius-left {
+        @apply !rounded-l-none;
+    }
+
+    /*Slider*/
+    .vue-slider-dot-handle-focus {
+        box-shadow: 0 0 1px 2px var(--secondary) !important;
+    }
+    .vue-slider-dot-tooltip-inner {
+        border-color: var(--secondary) !important;
+        background-color: var(--secondary) !important;
+    }
+    .vue-slider-process {
+        background-color: var(--secondary) !important;
+    }
+    /*Slider*/
+    #fr-logo {
+        display: none;
+    }
+    .fr-toolbar .fr-command.fr-btn svg.fr-svg, .fr-popup .fr-command.fr-btn svg.fr-svg, .fr-modal .fr-command.fr-btn svg.fr-svg {
+        height: 20px !important;
+    }
+    .fr-toolbar .fr-command.fr-btn i, .fr-toolbar .fr-command.fr-btn svg, .fr-popup .fr-command.fr-btn i, .fr-popup .fr-command.fr-btn svg, .fr-modal .fr-command.fr-btn i, .fr-modal .fr-command.fr-btn svg {
+        margin: 4px;
+    }
+}

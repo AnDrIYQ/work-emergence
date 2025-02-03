@@ -1,6 +1,6 @@
 <template>
-    <div :class="[style.group]">
-        <button v-if="canShow" type="button" :class="[style.togglePasswordVisibility]" @click="togglePasswordVisibility">
+    <div class="flex">
+        <button v-if="canShow" type="button" class="toggle-password-visibility" @click="togglePasswordVisibility">
             <i v-if="isPasswordVisible" class="fi fi-rr-eye-crossed"></i>
             <i v-else class="fi fi-rr-eye"></i>
         </button>
@@ -9,7 +9,7 @@
             ref="input"
             :autocomplete="autocomplete"
             :type="passwordInputType"
-            :class="[textFieldStyle.input, { [style.noRadiusRight]: this.canGenerate }]"
+            :class="['input', { 'no-radius-right': canGenerate, 'no-radius-left': canShow }]"
             :required="required"
             :value="modelValue"
             :placeholder="placeholder"
@@ -19,7 +19,7 @@
         <button
             v-if="canGenerate"
             type="button"
-            :class="[style.generateNewPassword]"
+            class="generate-new-password"
             @click="generatePassword"
         >
             <i class="fi fi-rr-magic-wand"></i>
@@ -30,8 +30,6 @@
 <script>
 import { toRef } from 'vue';
 import { copyToClipboard } from '@root/utils';
-import textFieldStyle from '@styles/components/inputs/TextField.module.css';
-import style from '@styles/components/inputs/PasswordField.module.css';
 import passfather from 'passfather';
 
 // Composables
@@ -63,12 +61,6 @@ export default {
             togglePasswordVisibility,
             setPasswordVisibility,
             passwordInputType
-        };
-    },
-    data() {
-        return {
-            textFieldStyle,
-            style,
         };
     },
     methods: {

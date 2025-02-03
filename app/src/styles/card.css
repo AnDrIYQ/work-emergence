@@ -1,0 +1,14 @@
+@custom-variant radius (&:where(.radius));
+@custom-variant tabled (&:where(.tabled));
+
+@layer components {
+    .card {
+        @apply shadow-md p-2 bg-white;
+        @variant radius {
+            @apply rounded-lg;
+        }
+        @variant tabled {
+            @apply !px-0;
+        }
+    }
+}

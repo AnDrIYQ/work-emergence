@@ -1,5 +1,6 @@
 <template>
-    <input type="text"
+    <input
+        type="number"
         ref="input"
         :value="modelValue"
         :placeholder="placeholder"
@@ -13,10 +14,10 @@
 import ValidationMixin from "@root/mixins/validation.js";
 
 export default {
-    name: 'TextField',
+    name: 'InputNumber',
     mixins: [ValidationMixin],
     props: {
-        modelValue: String,
+        modelValue: [String, Number],
         placeholder: String,
         required: {
             type: Boolean,

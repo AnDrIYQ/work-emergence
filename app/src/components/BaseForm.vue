@@ -1,7 +1,7 @@
 <template>
     <form
         ref="form"
-        :class="[style.form]"
+        class="form"
         :method="method"
     >
         <slot />
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import style from '@styles/components/BaseForm.module.css';
 import api from "@root/api";
 
 export default {
@@ -32,11 +31,6 @@ export default {
             type: Object,
             default: () => ({}),
         },
-    },
-    data() {
-        return {
-            style,
-        };
     },
     mounted() {
         const form = this.$refs.form;

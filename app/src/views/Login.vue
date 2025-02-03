@@ -7,7 +7,7 @@
             :data="model"
             @success="onFormSuccess"
         >
-            <h2>{{ $t('Вхід') }}</h2>
+            <h2 class="mb-4">{{ $t('Вхід') }}</h2>
             <span>{{ $t('Авторизуйтеся, щоб продовжити.') }}</span>
             <div>
                 <email-field v-model="model.email" :required="true" :placeholder="$t('Введіть email')" />

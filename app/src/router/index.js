@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from '@root/views/Login.vue';
 import Register from '@root/views/Register.vue';
 import NotFound from '@root/views/NotFound.vue';
+import Home from "@root/views/home/Home.vue";
 
 const routes = [
     {
@@ -25,9 +26,9 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: Login,
+        component: Home,
         meta: {
-            title: 'Work Emergence',
+            title: 'Home',
             keepAlive: true,
         },
     },

@@ -1,0 +1,29 @@
+@layer components {
+    .auth-wrapper {
+        @apply flex w-full h-screen;
+        .left-part {
+            @apply flex relative h-auto w-2/5;
+        }
+        .left-part img {
+            @apply w-full h-full object-cover;
+        }
+        .logo {
+            @apply w-16 h-16 absolute top-0 left-0 m-0 text-white flex items-center no-underline;
+        }
+        h2 {
+            @apply text-xl font-bold;
+        }
+        .logo span {
+            @apply whitespace-nowrap text-white;
+        }
+        .content-part {
+            @apply flex flex-col flex-grow justify-center items-center;
+        }
+        .content-area {
+            @apply w-full max-w-sm flex flex-col m-4 p-6 rounded-lg shadow-md bg-white;
+        }
+        .content-area img {
+            @apply h-16 w-16 mb-2 self-center;
+        }
+    }
+}

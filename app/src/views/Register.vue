@@ -7,7 +7,7 @@
             :data="model"
             @success="onFormSuccess"
         >
-            <h2>{{ $t('Реєстрація') }}</h2>
+            <h2 class="mb-4">{{ $t('Реєстрація') }}</h2>
             <span>{{ $t('Введіть необхідні дані, щоб зареєструватись.') }}</span>
             <div>
                 <email-field
