@@ -1,13 +1,24 @@
 // @ts-nocheck
 import express from "express";
+import session from 'express-session';
 import bodyParser from "body-parser";
 import AuthController from "./controllers/AuthController";
 import { body } from 'express-validator';
+import 'dotenv/config';
 
 // Middlewares
 import { authMiddleware } from '@root/middlewares/auth';
 
 const app = express();
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 30,
+    },
+}));
 
 // Middleware for parsing JSON
 app.use(bodyParser.json());

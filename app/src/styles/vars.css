@@ -1,0 +1,46 @@
+@theme {
+    --spacing: 4px;
+
+    --shadow-md: 1px 2px 4px 1px rgba(0, 0, 0, 0.1);
+
+    --color-main: oklch(0.402 0.032 248.625);
+    --color-green: oklch(0.621 0.064 162.517);
+}
+
+
+:root {
+    --dp-border-radius: 0.375rem;
+    --dp-cell-border-radius: 0.375rem;
+
+    --dp-font-size: 0.75rem;
+    --dp-preview-font-size: 0.75rem;
+    --dp-time-font-size: 0.75rem;
+}
+
+.dp--menu-wrapper {
+    @apply shadow-sm;
+}
+.dp__theme_light {
+    button {
+        box-shadow: none;
+    }
+
+    --dp-action-row-padding: 12px;
+    --dp-primary-color: var(--secondary);
+    --dp-primary-disabled-color: var(--color-main);
+    --dp-primary-text-color: #f8f5f5;
+
+    --dp-action-buttons-padding: 12px 10px;
+    --dp-hover-color: var(--dp-hover-color);
+    --dp-border-color: oklch(0.872 0.01 258.338);
+    --dp-menu-border-color: oklch(0.928 0.006 264.531);
+    --dp-border-color-hover: var(--secondary);
+    --dp-border-color-focus: var(--secondary);
+    --dp-range-between-border-color: var(--dp-hover-color, #f3f3f3);
+
+    --dp-cell-size: 25px;
+    --dp-cell-padding: 0;
+    --dp-common-padding: 4px;
+    --dp-input-icon-padding: 30px;
+    --dp-input-padding: 8px;
+}

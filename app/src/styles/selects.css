@@ -1,0 +1,69 @@
+@import "./common.css";
+
+@layer utilities {
+    .multiselect:after {
+        content: "";
+        @apply flex transition-all absolute font-bold select-none top-[11px] right-3 w-2 h-2 border-2 border-gray-500 border-l-transparent rotate-45 border-t-transparent;
+    }
+    .multiselect--active:after {
+        @apply transition-all top-[15px] rotate-225;
+    }
+}
+
+@layer components {
+    .multiselect__spinner {
+        @apply fi-b fi-br-spinner text-[var(--secondary)] h-[12px] w-[12px] absolute right-8 top-[11px] animate-spin;
+    }
+    .multiselect__tag {
+        @apply bg-gray-300 rounded-sm p-1 text-white text-xs bg-green flex items-center gap-2;
+        .multiselect__tag-icon {
+            @apply min-w-2 min-h-2 flex flex-grow fi-b fi-br-cross-small;
+        }
+    }
+    .multiselect__tags-wrap::-webkit-scrollbar {
+        display: none;
+    }
+    .multiselect__tags-wrap {
+        @apply flex gap-1 p-2 flex-wrap overflow-scroll min-h-8 max-h-16 w-10/11;
+    }
+    .multiselect {
+        @apply relative cursor-pointer;
+    }
+    .multiselect[aria-expanded="false"] {
+        .multiselect__input {
+            @apply collapse;
+        }
+    }
+    .multiselect__tags {
+        @apply w-full flex flex-wrap items-center bg-white border border-gray-300 reset-outline rounded-md text-[var(--dark)] text-xs;
+        .multiselect__tag {
+            span {
+                @apply pointer-events-none;
+            }
+        }
+        .multiselect__single, .multiselect__placeholder {
+            @apply w-full p-2;
+        }
+    }
+    .multiselect__input {
+        @apply input-outline p-2;
+    }
+    .multiselect__content-wrapper {
+        @apply absolute rounded-md top-full w-full left-0 bg-white shadow-md z-[1000] overflow-y-scroll;
+    }
+    .multiselect__content {
+        @apply !flex flex-col h-full;
+        .multiselect__element {
+            @apply flex w-full text-xs;
+            .multiselect__option {
+                @apply flex w-full p-2;
+            }
+            .multiselect__option--selected {
+                @apply bg-gray-200;
+            }
+            .multiselect__option--highlight {
+                @apply bg-[var(--secondary)] text-white;
+            }
+        }
+    }
+}

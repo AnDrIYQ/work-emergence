@@ -19,6 +19,6 @@ describe('Authentication tests', () => {
 
     test('Test', async () => {
         const response = await request.post('/register').send({ username: 'as', password: 'q1w2e3' });
-
+        console.log(response.body, response.status, response.headers);
     });
-})
+});

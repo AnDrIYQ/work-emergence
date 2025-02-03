@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "../node_modules/@flaticon/flaticon-uicons/css/all/all.css";
+
+@import "./styles/login-layout.css";
+@import "./styles/main-layout.css";
+
+/* Variables */
+@import "./styles/vars.css";
+
+/* Common */
+@import "./styles/common.css";
+@import "./styles/card.css";
+@import "./styles/selects.css";
+@import "./styles/form.css";
+@import "./styles/inputs.css";
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --easy-table-border: none;
+
+    font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --main-bg: #f0f2f8;
+    --dark: #393434;
+    --secondary: #62937b;
+    --main: #3b4a59;
+    --gray: #929292;
+    --danger: #e33b3b;
+
+    --box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg);
+    @apply text-sm;
+}
+
+a {
+    color: var(--secondary);
+}
+
+#app {
+    display: flex;
+    min-height: 100vh;
+}

@@ -1,0 +1,11 @@
+@layer components {
+    .main-layout {
+        @apply flex flex-col w-full flex-grow items-center;
+    }
+    .logo-image {
+        @apply w-12;
+    }
+    .logo-text {
+        @apply text-main font-medium text-lg;
+    }
+}

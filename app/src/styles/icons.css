@@ -1,0 +1,23 @@
+@utility fi-b {
+    &:before {
+        font-family: "uicons-bold-rounded" !important;
+        font-style: normal;
+        font-weight: 400 !important;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* Icons */
+@utility fi-br-cross-small {
+    &:before {
+        content: "\f4f9";
+    }
+}
+@utility fi-br-spinner {
+    &:before {
+        content: "\fc92";
+    }
+}
