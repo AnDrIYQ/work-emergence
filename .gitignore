@@ -1,6 +1,8 @@
-./api/node_modules
-./api/.env
-./api/.idea
+.idea/
+api/node_modules/
+api/.env
+api/.idea/
 
-./app/node_modules
-./app/.idea
+app/.stylelintcache
+app/node_modules/
+app/.idea/

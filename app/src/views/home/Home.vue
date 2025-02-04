@@ -3,12 +3,20 @@
         <template #header>
             <header-component />
         </template>
+        <div class="card rounded mb-4 p-4">
+            <input-field
+                v-model="dynamicValue"
+                title="Текстове динамічне поле"
+                type="select"
+            />
+        </div>
         <div class="flex card radius flex-wrap item-center p-4 gap-4">
             <div class="flex flex-col mb-4">
                 <h1 class="text-2xl text-main">UI Kit Temporary page</h1>
                 <h2 class="text-xl text-main">Example text h2</h2>
                 <h3 class="text-md text-main">Example text h3</h3>
                 <p class="text-xs text-green">Example regular text</p>
+                <router-link to="/login">Link example text</router-link>
             </div>
             <div class="w-4/12">
                 <text-field
@@ -106,6 +114,7 @@ import InputBoolean from "@components/inputs/InputBoolean.vue";
 import FroalaEditor from "@components/inputs/FroalaEditor.vue";
 import InputNumber from "@components/inputs/InputNumber.vue";
 import RatingInput from "@components/inputs/RatingInput.vue";
+import InputField from "@components/inputs/InputField.vue";
 
 export default {
     name: 'HomePage',
@@ -137,11 +146,13 @@ export default {
                 responsive: true,
                 select: true,
             },
+            dynamicValue: null,
         };
     },
     mounted() {
     },
     components: {
+        InputField,
         RatingInput,
         InputNumber,
         FroalaEditor,

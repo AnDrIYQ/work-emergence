@@ -6,7 +6,6 @@
         label="text"
         :multiple="true"
         :close-on-select="false"
-        :placeholder="placeholder"
         :options-limit="300"
         :limit="50"
         :limit-text="limitText"
@@ -30,17 +29,11 @@ export default {
     name: "MultipleSelect",
     props: {
         modelValue: Array,
+        searchUrl: String,
+        allowEmpty: Boolean,
         options: {
             type: Array,
             default: () => [],
-        },
-        searchUrl: String,
-        disabled: Boolean,
-        allowEmpty: Boolean,
-        placeholder: String,
-        required: {
-            type: Boolean,
-            default: false,
         },
     },
     emits: ['update:modelValue'],
