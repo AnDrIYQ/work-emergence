@@ -9,6 +9,7 @@
                 <h2 class="text-xl text-main">Example text h2</h2>
                 <h3 class="text-md text-main">Example text h3</h3>
                 <p class="text-xs text-green">Example regular text</p>
+                <router-link to="/login">Link example text</router-link>
             </div>
             <div class="w-4/12">
                 <text-field
