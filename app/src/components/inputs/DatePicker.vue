@@ -25,7 +25,6 @@ export default {
     name: "DatePicker",
     props: {
         modelValue: String,
-        config: Object,
     },
     emits: ['update:modelValue'],
     data() {

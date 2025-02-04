@@ -5,10 +5,11 @@
         :options="options"
         track-by="value"
         label="text"
-        :disabled="disabled"
-        :placeholder="placeholder"
         @update:modelValue="handleUpdate"
     >
+        <template #noOptions>
+            <div class="p-2 text-xs">{{ $t('Список порожній') }}</div>
+        </template>
         <template #noResult>
             <div class="p-2 text-xs">{{ $t('Нічого не знайдено') }}</div>
         </template>
@@ -20,16 +21,10 @@ export default {
     name: "BaseSelect",
     props: {
         modelValue: [Number, String],
+        allowEmpty: Boolean,
         options: {
             type: Array,
             default: () => [],
-        },
-        disabled: Boolean,
-        allowEmpty: Boolean,
-        placeholder: String,
-        required: {
-            type: Boolean,
-            default: false,
         },
     },
     emits: ['update:modelValue'],

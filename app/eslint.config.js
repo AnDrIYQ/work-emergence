@@ -15,7 +15,7 @@ export default [
         },
         rules: {
             semi: ["error", "always"],
-            indent: ["error", 4],
+            indent: ["error", 4, { "SwitchCase": 1 }],
             'vue/valid-template-root': 'off',
         },
     },

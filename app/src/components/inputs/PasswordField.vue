@@ -12,7 +12,6 @@
             :class="['input', { 'no-radius-right': canGenerate, 'no-radius-left': canShow }]"
             :required="required"
             :value="modelValue"
-            :placeholder="placeholder"
             @input="$emit('update:modelValue', $event.target.value)"
         />
 
@@ -34,22 +33,14 @@ import passfather from 'passfather';
 
 // Composables
 import { usePasswordVisibility } from '@root/composables/show-password.js';
-import ValidationMixin from "@root/mixins/validation.js";
 
 export default {
     name: "PasswordField",
-    mixins: [ValidationMixin],
     props: {
         modelValue: String,
-        placeholder: String,
         showPassword: Boolean,
         canShow: Boolean,
         canGenerate: Boolean,
-        autocomplete: String,
-        required: {
-            type: Boolean,
-            default: false,
-        },
     },
     emits: ['update:modelValue', 'update:showPassword', 'password-generated'],
     setup(props, { emit }) {
