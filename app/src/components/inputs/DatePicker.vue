@@ -5,7 +5,7 @@
         :enable-time-picker="false"
         format="yyyy.mm.dd"
         :format-locale="uk"
-        placeholder="Обрати дату"
+        :placeholder="$t('Обрати дату')"
         :select-text="$t('Обрати')"
         :cancel-text="$t('Закрити')"
         :range="false"

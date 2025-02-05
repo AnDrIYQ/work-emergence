@@ -13,6 +13,12 @@ export default {
     name: 'InputNumber',
     props: {
         modelValue: [String, Number],
+        numberType: {
+            type: String,
+            validator: (value) => [
+                'integer', 'float',
+            ].includes(value)
+        },
     },
     emits: ['update:modelValue'],
 };

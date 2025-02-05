@@ -42,7 +42,7 @@ const FieldSchema = new mongoose.Schema(
                 'Rating',
                 'UserReference',
                 'EntityReference',
-                'Timer',
+                'Tracker',
                 'Color',
                 'Group',
             ],

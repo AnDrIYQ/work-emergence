@@ -1,7 +1,9 @@
 // @ts-ignore
+// eslint-disable-next-line no-undef
 const { Schema, model } = require('mongoose');
 import Exception from '@root/exceptions.js';
 
+// eslint-disable-next-line no-undef
 const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 10;
 
