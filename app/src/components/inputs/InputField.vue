@@ -60,52 +60,52 @@ export default {
             let componentName = '';
             
             switch(this.type) {
-            case 'text':    
-                componentName = 'text-field'; 
-                break;
-            case 'textarea':
-                componentName = 'textarea-field'; 
-                break;
-            case 'slider':
-                componentName = 'slider-input';
-                break;
-            case 'rating':
-                componentName = 'rating-input';
-                break;
-            case 'password':
-                componentName = 'password-field';
-                break;
-            case 'multiple-select':
-                componentName = 'multiple-select';
-                break;
-            case 'number':
-                componentName = 'input-number';
-                break;
-            case 'file':
-                componentName = 'input-file';
-                break;
-            case 'boolean':
-                componentName = 'input-boolean';
-                break;
-            case 'froala':
-                componentName = 'froala-editor';
-                break;
-            case 'email':
-                componentName = 'email-field';
-                break;
-            case 'date':
-                componentName = 'date-picker';
-                break;
-            case 'color':
-                componentName = 'color-picker';
-                break;
-            case 'select':
-                componentName = 'base-select';
-                break;
-            default:
-                alert(`Unknown input type: ${this.type}`);
-                componentName = 'text-field';
-                break;
+                case 'text':    
+                    componentName = 'text-field'; 
+                    break;
+                case 'textarea':
+                    componentName = 'textarea-field'; 
+                    break;
+                case 'slider':
+                    componentName = 'slider-input';
+                    break;
+                case 'rating':
+                    componentName = 'rating-input';
+                    break;
+                case 'password':
+                    componentName = 'password-field';
+                    break;
+                case 'multiple-select':
+                    componentName = 'multiple-select';
+                    break;
+                case 'number':
+                    componentName = 'input-number';
+                    break;
+                case 'file':
+                    componentName = 'input-file';
+                    break;
+                case 'boolean':
+                    componentName = 'input-boolean';
+                    break;
+                case 'froala':
+                    componentName = 'froala-editor';
+                    break;
+                case 'email':
+                    componentName = 'email-field';
+                    break;
+                case 'date':
+                    componentName = 'date-picker';
+                    break;
+                case 'color':
+                    componentName = 'color-picker';
+                    break;
+                case 'select':
+                    componentName = 'base-select';
+                    break;
+                default:
+                    alert(`Unknown input type: ${this.type}`);
+                    componentName = 'text-field';
+                    break;
             }
 
             return componentName;

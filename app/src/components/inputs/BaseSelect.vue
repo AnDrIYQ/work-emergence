@@ -14,11 +14,22 @@
             <div class="p-2 text-xs">{{ $t('Нічого не знайдено') }}</div>
         </template>
     </v-select>
+    {{ validationText }}
 </template>
 
 <script>
+import { useInputValidation } from "@composables/input-validation/use-input-validation.js";
+import inputValidationMixin from "@composables/input-validation/inputValidationMixin.js";
+
 export default {
     name: "BaseSelect",
+    mixins: [
+        inputValidationMixin,
+    ],
+    setup(props) {
+        const { validity } = useInputValidation(props);
+        return { validationText: validity };
+    },
     props: {
         modelValue: [Number, String],
         allowEmpty: Boolean,

@@ -7,7 +7,7 @@
             <input-field
                 v-model="dynamicValue"
                 title="Текстове динамічне поле"
-                type="select"
+                type="text"
             />
         </div>
         <div class="flex card radius flex-wrap item-center p-4 gap-4">
@@ -37,7 +37,6 @@
             <div class="w-4/12">
                 <base-select
                     v-model="selected"
-                    placeholder="Оберіть елемент"
                     :allow-empty="false"
                     :options="[{value: 0, text: 'Пусте'}, {value: 1, text: 'Default value 2'}, {value: 2, text: 'Default value 3'}]"
                 />
