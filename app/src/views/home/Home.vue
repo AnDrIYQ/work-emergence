@@ -90,10 +90,6 @@
                 />
             </div>
             <div class="card tabled radius w-1/2">
-                <data-table
-                    :headers="[{text:'Назва', value:'name'}, {text: 'Воркспейс', value: 'workspace'}]"
-                    :items="[{name: 'Залупа', workspace: 'Мій'}, {name: 'Залупа', workspace: 'Мій'}, {name: 'Залупа', workspace: 'Мій'}]"
-                />
             </div>
         </div>
     </main-layout>
